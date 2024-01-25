@@ -25,7 +25,7 @@ const Hero = () => {
 						className="rounded-full w-28 h-28 object-cover border border-secondary-foreground shadow-lg"
 					/>
 					<motion.span
-						className="absolute bottom-0 right-0 text-3xl"
+						className="absolute bottom-0 right-0 text-3xl saturate-100 hue-rotate-[13deg]"
 						initial={{ opacity: 0, scale: 0 }}
 						animate={{ opacity: 1, scale: 1 }}
 						transition={{
