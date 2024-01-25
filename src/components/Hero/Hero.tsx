@@ -12,7 +12,7 @@ const Hero = () => {
 				type: "tween",
 				duration: 0.2,
 			}}
-			className="h-auto w-full bg-secondary text-secondary-foreground rounded-3xl border border-secondary p-4 flex flex-col items-start justify-evenly gap-4"
+			className="h-auto w-full bg-secondary text-secondary-foreground rounded-3xl border border-secondary p-4 flex flex-col items-start justify-evenly gap-8"
 		>
 			<div className="flex flex-row items-center w-full">
 				<div className="relative">
@@ -41,10 +41,12 @@ const Hero = () => {
 				<p className="text-8xl mx-auto">Hi!</p>
 			</div>
 			<div className="text-left w-full">
-				<h1 className="text-4xl mb-4 leading-tight">
-					I{"'"}m Aurélien Albe.
+				<h1 className="text-3xl mb-8">
+					My name is
+					<br />
+					<span className="uppercase text-4xl">Aurélien Albe.</span>
 				</h1>
-				<p className="text-xl">
+				<p className="text-lg leading-5">
 					I{"'"}m a{" "}
 					<span className="underline">Full-Stack Developer</span>,
 					passionate about <span className="underline">Web3</span>{" "}
