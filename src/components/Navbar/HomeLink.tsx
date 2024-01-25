@@ -4,7 +4,7 @@ import { ArrowLink } from "@/components/ui/ArrowLink";
 
 const HomeLink = () => {
 	return (
-		<div className="border border-primary rounded-3xl p-[0.1rem] h-full">
+		<div className="border border-primary rounded-3xl p-[0.1rem] h-full sm:w-1/2 ">
 			<div className="bg-primary text-primary-foreground rounded-3xl h-full">
 				<Link
 					href="/"
@@ -13,7 +13,7 @@ const HomeLink = () => {
 					<span className="flex flex-shrink-0 min-w-32 items-center justify-center h-full px-2">
 						Home page
 					</span>
-					<div className="hidden sm:block">
+					<div className="hidden sm:block p-[0.1rem]">
 						<ArrowLink />
 					</div>
 				</Link>

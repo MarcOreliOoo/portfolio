@@ -10,7 +10,7 @@ import Footer from "@/components/Footer/Footer";
 
 export default function Home() {
 	return (
-		<main className="border rounded-3xl grid grid-cols-1 gap-2">
+		<main className="w-full h-full grid grid-cols-1 gap-2 border border-red-500 px-2">
 			<Hero />
 			<CTA />
 			<About />

@@ -18,12 +18,10 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body
-				className={`${inter.className} p-2 bg-background min-h-screen text-foreground`}
+				className={`${inter.className} bg-background min-h-screen text-foreground max-w-screen-2xl flex flex-col items-center justify-start overflow-hidden mx-auto px-2 pt-2 gap-y-2`}
 			>
 				<Providers>
-					<div className="mb-2 h-14">
-						<Navbar />
-					</div>
+					<Navbar />
 					{children}
 				</Providers>
 			</body>
