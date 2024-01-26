@@ -1,11 +1,11 @@
 import React from "react";
 import { ArrowLink } from "@/components/ui/ArrowLink";
 import Link from "next/link";
-import { Asterisk, User, UserCircle } from "lucide-react";
+import { UserCircle } from "lucide-react";
 
 const About = () => {
 	return (
-		<div className="h-auto w-full rounded-3xl p-4 border flex flex-col items-start justify-evenly gap-8 relative">
+		<div className="bg-background text-foreground h-auto w-full rounded-3xl p-4 border flex flex-col items-start justify-evenly gap-8 relative">
 			<UserCircle className="w-28 h-28 absolute left-[0.65rem] top-3" />
 			<div className="flex flex-row items-center justify-between w-full pt-32">
 				<h1 className="text-3xl leading-8 font-semibold">About Me</h1>
