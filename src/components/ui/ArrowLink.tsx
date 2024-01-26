@@ -32,6 +32,7 @@ const arrowVariants = cva(
 	}
 );
 
+// TODO: change the arrowVariants to be more like the buttonVariants and switch lucide icon with animation on hover
 type ArrowLinkProps = VariantProps<typeof arrowVariants> &
 	ComponentProps<LucideIcon>;
 
