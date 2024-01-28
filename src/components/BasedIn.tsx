@@ -1,7 +1,15 @@
-import React from "react";
+import dynamic from "next/dynamic";
 
-const BasedIn = () => {
-	return <div>BasedIn</div>;
-};
+const BasedInDynamic = dynamic(() => import("@/components/MyMap"), {
+	ssr: false,
+	loading: () => (
+		<div className="h-80 w-full bg-secondary text-secondary-foreground rounded-3xl border border-secondary p-4 flex flex-col items-start justify-evenly gap-8 md:justify-start"></div>
+	),
+});
 
-export default BasedIn;
+/* const BasedIn = (props: any) => {
+	return <BasedInDynamic {...props} />;
+}; */
+
+/* export default BasedIn; */
+export default BasedInDynamic;

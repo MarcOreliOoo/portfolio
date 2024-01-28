@@ -7,7 +7,7 @@ import BasedIn from "@/components/BasedIn";
 import Testimonials from "@/components/Testimonials";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer/Footer";
-import Filler from "../components/Filler";
+import Filler from "@/components/Filler";
 
 export default function Home() {
 	return (
@@ -22,12 +22,19 @@ export default function Home() {
 			<div className="col-span-1 sm:col-span-2 md:col-span-3">
 				<About />
 			</div>
+			<div className="hidden lg:block lg:col-span-1">
+				<BasedIn />
+			</div>
 			<div className="flex flex-col gap-2 sm:grid sm:grid-cols-2 sm:col-span-2 md:col-span-3 lg:grid-cols-4 lg:col-span-4">
 				<Categories />
 			</div>
 
+			<div className="block lg:hidden">
+				<BasedIn />
+			</div>
+
 			<Projects />
-			<BasedIn />
+
 			<Testimonials />
 			<Contact />
 			<Footer />

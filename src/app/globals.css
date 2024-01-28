@@ -33,4 +33,7 @@
 		@apply bg-background text-foreground;
 		font-feature-settings: "rlig" 1, "calt" 1;
 	}
+	.my-map-container .leaflet-control-attribution {
+		display: none;
+	}
 }
