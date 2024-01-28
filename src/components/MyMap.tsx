@@ -51,12 +51,11 @@ const MyMap = () => {
 		);
 	}, []);
 
-	console.log(displayMap);
-
 	return (
 		<div
 			className={`h-[346px] w-full bg-secondary text-secondary-foreground rounded-3xl border border-secondary p-4 flex flex-col items-start justify-evenly gap-8 md:justify-start`}
 		>
+			<h1 className="text-3xl leading-8 font-semibold">I{"'"}m there!</h1>
 			{displayMap ?? null}
 		</div>
 	);
