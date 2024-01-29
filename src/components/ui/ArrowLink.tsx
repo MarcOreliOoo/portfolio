@@ -1,4 +1,4 @@
-import React, { Component, ComponentProps } from "react";
+import React, { Component, ComponentProps, forwardRef } from "react";
 import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
@@ -36,29 +36,31 @@ const arrowVariants = cva(
 type ArrowLinkProps = VariantProps<typeof arrowVariants> &
 	ComponentProps<LucideIcon>;
 
-const ArrowLink = (
-	{ className, variant, size, ...props }: ArrowLinkProps,
-	ref:
-		| ((
-				| ((instance: SVGSVGElement | null) => void)
-				| React.RefObject<SVGSVGElement>
-		  ) &
-				(
-					| string
+const ArrowLink = forwardRef(
+	(
+		{ className, variant, size, ...props }: ArrowLinkProps,
+		ref:
+			| ((
 					| ((instance: SVGSVGElement | null) => void)
 					| React.RefObject<SVGSVGElement>
-				))
-		| null
-		| undefined
-) => {
-	return (
-		<ArrowRight
-			className={cn(arrowVariants({ variant, size, className }))}
-			ref={ref}
-			{...props}
-		/>
-	);
-};
+			  ) &
+					(
+						| string
+						| ((instance: SVGSVGElement | null) => void)
+						| React.RefObject<SVGSVGElement>
+					))
+			| null
+			| undefined
+	) => {
+		return (
+			<ArrowRight
+				className={cn(arrowVariants({ variant, size, className }))}
+				ref={ref}
+				{...props}
+			/>
+		);
+	}
+);
 ArrowLink.displayName = "ArrowLink";
 
 export { ArrowLink, arrowVariants };

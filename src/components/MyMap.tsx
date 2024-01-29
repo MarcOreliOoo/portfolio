@@ -17,7 +17,7 @@ const MapPlaceholder = () => {
 	);
 };
 
-const MyMap = () => {
+const MyMap = ({ height }: { height?: number }) => {
 	const displayMap = useMemo(() => {
 		const position = { lat: 48.83576965332031, lng: 2.241274356842041 };
 		const customIcon = new L.Icon({
@@ -53,7 +53,9 @@ const MyMap = () => {
 
 	return (
 		<div
-			className={`h-[346px] w-full bg-secondary text-secondary-foreground rounded-3xl border border-secondary p-4 flex flex-col items-start justify-evenly gap-8 md:justify-start`}
+			className={`h-[${
+				height ?? 346
+			}px] w-full bg-secondary text-secondary-foreground rounded-3xl border border-secondary p-4 flex flex-col items-start justify-evenly gap-8 md:justify-start`}
 		>
 			<h1 className="text-3xl leading-8 font-semibold">I{"'"}m there!</h1>
 			{displayMap ?? null}

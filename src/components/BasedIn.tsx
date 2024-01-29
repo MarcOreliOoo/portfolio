@@ -7,9 +7,9 @@ const BasedInDynamic = dynamic(() => import("@/components/MyMap"), {
 	),
 });
 
-/* const BasedIn = (props: any) => {
+const BasedIn = (props: any) => {
 	return <BasedInDynamic {...props} />;
-}; */
+};
 
-/* export default BasedIn; */
-export default BasedInDynamic;
+export default BasedIn;
+/* export default BasedInDynamic; */
