@@ -18,7 +18,7 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body
-				className={`${raleway.className} bg-background min-h-screen text-foreground max-w-screen-2xl flex flex-col items-center justify-start overflow-x-hidden mx-auto px-2 pt-2 gap-y-2`}
+				className={`${raleway.className} bg-background min-h-screen text-foreground max-w-screen-2xl flex flex-col items-center justify-start overflow-x-hidden mx-auto px-2 pt-2 pb-2 gap-y-2`}
 			>
 				<Providers>
 					<Navbar />

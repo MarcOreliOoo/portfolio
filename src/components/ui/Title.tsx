@@ -6,6 +6,7 @@ const titleVariants = cva("", {
 	variants: {
 		variant: {
 			default: "text-3xl leading-8 font-semibold",
+			small: "text-lg font-light",
 		},
 	},
 	defaultVariants: {

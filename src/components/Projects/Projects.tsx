@@ -2,7 +2,7 @@ import React from "react";
 import { projectsData } from "@/lib/data";
 import Link from "next/link";
 import Image from "next/image";
-import { Github, ExternalLink } from "lucide-react";
+
 import Title from "@/components/ui/Title";
 
 const Projects = () => {
@@ -16,55 +16,25 @@ const Projects = () => {
 					<Link href={`/project/${project.id}`}>
 						<Title>{project.title}</Title>
 					</Link>
-					<Image
-						src={project.preview ?? "#"}
-						alt={project.title}
-						width="100"
-					/>
-					<p>{project.shortDesc}</p>
-					<div className="flex flex-wrap gap-[0.1rem] overflow-clip">
+					<div className="flex flex-wrap gap-[0.1rem] overflow-clip items-start justify-center w-full">
 						{project.tags.map((tag) => (
 							<span
 								key={tag}
-								className="bg-primary text-primary-foreground rounded-3xl px-4 py-2 flex items-center justify-center flex-nowrap"
+								className="bg-secondary text-secondary-foreground rounded-3xl px-4 py-2 flex items-center justify-center flex-nowrap text-sm"
 							>
 								{tag}
 							</span>
 						))}
 					</div>
-					<div className="flex flex-wrap gap-[0.1rem] overflow-clip">
-						{Object.entries(project.techs).map((category) => (
-							<div key={category[0]}>
-								<h1>{category[0]}</h1>
-								{category[1].map((tech) => (
-									<span
-										key={tech}
-										className="bg-primary text-primary-foreground rounded-3xl px-4 py-2 flex items-center justify-center flex-nowrap"
-									>
-										{tech}
-									</span>
-								))}
-							</div>
-						))}
+					<div className="flex items-center justify-center mx-auto rounded-3xl overflow-clip">
+						<Image
+							src={"/developer.png"}
+							alt={project.title}
+							width="500"
+							height="500"
+							priority={true}
+						/>
 					</div>
-					{project.links && (
-						<div className="flex gap-4">
-							<Link
-								href={project.links.github ?? "#"}
-								className="bg-primary text-primary-foreground rounded-full px-4 py-2"
-							>
-								<Github>{project.links.github}</Github>
-							</Link>
-							<Link
-								href={project.links.website ?? "#"}
-								className="bg-primary text-primary-foreground rounded-full px-4 py-2"
-							>
-								<ExternalLink>
-									{project.links.website}
-								</ExternalLink>
-							</Link>
-						</div>
-					)}
 				</li>
 			))}
 		</ul>
