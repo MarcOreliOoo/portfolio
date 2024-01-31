@@ -5,7 +5,7 @@ import CTA from "@/components/CTA";
 import About from "@/components/About";
 import Categories from "@/components/Categories";
 import Projects from "@/components/Projects/Projects";
-import BasedIn from "@/components/BasedIn";
+import BasedIn from "@/components/BasedIn/BasedIn";
 import Testimonials from "@/components/Testimonials";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer/Footer";
@@ -50,7 +50,9 @@ export default function Home() {
 				<BasedIn />
 			</div>
 
-			<Projects />
+			<div className="col-span-1 sm:col-span-2 md:col-span-3 lg:col-span-4">
+				<Projects />
+			</div>
 
 			<Testimonials />
 			<Contact />

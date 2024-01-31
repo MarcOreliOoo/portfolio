@@ -4,7 +4,7 @@ import { ArrowLink } from "@/components/ui/ArrowLink";
 
 const HomeLink = () => {
 	return (
-		<div className="border border-primary rounded-3xl p-[0.1rem] h-full sm:w-1/2 ">
+		<div className="border border-primary rounded-full p-[0.1rem] h-full sm:w-1/2 ">
 			<div className="bg-primary text-primary-foreground rounded-3xl h-full">
 				<Link
 					href="/"
