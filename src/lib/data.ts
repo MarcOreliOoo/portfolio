@@ -10,6 +10,7 @@ type projectType = {
 	tags: string[];
 	shortDesc: string;
 	preview?: string;
+	images?: string[];
 	links?: {
 		website?: string;
 		github?: string;
@@ -137,7 +138,7 @@ const projectsData: projectType[] = [
 		],
 		shortDesc:
 			"Modern Design Website is a project that aims to create a modern website design with a lot of smooth gradient and explore tailwindcss usage.",
-		preview: "",
+		preview: "FlashbackModernWebApp",
 		links: {
 			website: "https://start-modern-web3-app.vercel.app/",
 			github: "https://github.com/MarcOreliOoo/Modern-Design-App",
