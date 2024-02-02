@@ -1,6 +1,8 @@
 type projectType = {
 	id: number;
 	title: string;
+	colors: string;
+	tagsColors: string;
 	techs: {
 		frontend?: string[];
 		blockchain?: string[];
@@ -20,6 +22,9 @@ const projectsData: projectType[] = [
 	{
 		id: 1,
 		title: "Demyth",
+		colors: "bg-primary text-primary-foreground border border-primary",
+		tagsColors:
+			"bg-primary text-primary-foreground border border-primary-foreground",
 		techs: {
 			frontend: [
 				"Next Js",
@@ -68,6 +73,9 @@ const projectsData: projectType[] = [
 	{
 		id: 2,
 		title: "CommOwn Shared Wallet",
+		colors: "bg-accent text-accent-foreground border border-accent",
+		tagsColors:
+			"bg-accent text-accent-foreground border border-accent-foreground",
 		techs: {
 			frontend: [
 				"React",
@@ -100,10 +108,9 @@ const projectsData: projectType[] = [
 				"Vite",
 			],
 		},
-
 		tags: [
 			"Web3",
-			"Gnosis",
+			"Gnosis Like",
 			"Blockchain",
 			"Wallet",
 			"Smart Contract",
@@ -123,6 +130,8 @@ const projectsData: projectType[] = [
 	{
 		id: 3,
 		title: "Modern Design Website",
+		colors: "bg-background text-foreground border border-foreground",
+		tagsColors: "bg-background text-foreground border border-primary",
 		techs: {
 			frontend: ["React", "Typescript", "React dom", "Tailwindcss"],
 			devops: ["Vercel", "ESLint", "Prettier", "Npm", "Vite"],
@@ -147,6 +156,9 @@ const projectsData: projectType[] = [
 	{
 		id: 4,
 		title: "Technical Explanation of Curve pool hacked 30th june 2023",
+		colors: "bg-secondary text-secondary-foreground border border-secondary",
+		tagsColors:
+			"bg-secondary text-secondary-foreground border border-secondary-foreground",
 		techs: {
 			blockchain: ["Solidity", "Phalcon", "Etherscan"],
 		},
@@ -163,6 +175,9 @@ const projectsData: projectType[] = [
 	{
 		id: 5,
 		title: "Tiktok Like",
+		colors: "bg-secondary text-secondary-foreground border border-secondary",
+		tagsColors:
+			"bg-secondary text-secondary-foreground border border-secondary-foreground",
 		shortDesc:
 			"Tiktok Like is a project that aims to create a tiktok like app with next js and sanity following a tutorial of JSMastery.",
 		techs: {
@@ -181,9 +196,9 @@ const projectsData: projectType[] = [
 			backend: ["Sanity", "Typescript"],
 			devops: ["Vercel", "Npm"],
 		},
-
 		tags: [
 			"NextJs",
+			"Tiktok Like",
 			"Zustand",
 			"Tailwindcss",
 			"Sanity",
@@ -199,6 +214,9 @@ const projectsData: projectType[] = [
 	{
 		id: 6,
 		title: "Ethernaut",
+		colors: "bg-accent text-accent-foreground border border-accent",
+		tagsColors:
+			"bg-accent text-accent-foreground border border-accent-foreground",
 		shortDesc:
 			"Ethernaut is a project that aims to solve the Ethernaut challenges.",
 		techs: {

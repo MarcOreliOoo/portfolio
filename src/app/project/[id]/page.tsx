@@ -36,16 +36,15 @@ const VideoComponent = async ({ fileName }: { fileName: string }) => {
 };
 
 const VideoPreview = ({ preview }: { preview: projectType["preview"] }) => {
-	if (!preview) return null;
 	return (
 		<Suspense fallback={<VideoSkeleton />}>
-			<VideoComponent fileName={preview} />
+			<VideoComponent fileName={preview!} />
 		</Suspense>
 	);
 };
 
 const ImagesList = ({ images }: { images: projectType["images"] }) => {
-	if (!images) return null;
+	if (!images || images.length == 0) return null;
 	return (
 		<>
 			{images.map((image, index) => (
@@ -74,7 +73,9 @@ const ProjectPage = ({ params }: { params: { id: string } }) => {
 
 	return (
 		<main className="h-auto w-full grid grid-cols-1 gap-2">
-			<div className="h-auto w-full bg-primary text-primary-foreground rounded-3xl border border-primary p-4 flex flex-col items-start justify-evenly gap-8 relative overflow-clip md:justify-start">
+			<div
+				className={`h-auto w-full ${project.colors} rounded-3xl border border-primary p-4 flex flex-col items-start justify-evenly gap-8 relative overflow-clip md:justify-start`}
+			>
 				<Title>{project.title}</Title>
 				<div className="grid grid-cols-1 gap-8 sm:grid-cols-2">
 					<p>{project.shortDesc}</p>
@@ -82,7 +83,7 @@ const ProjectPage = ({ params }: { params: { id: string } }) => {
 						{project.tags.map((tag) => (
 							<span
 								key={tag}
-								className="bg-secondary text-secondary-foreground rounded-3xl px-4 py-2 flex items-center justify-center flex-nowrap text-sm"
+								className={`${project.tagsColors} rounded-3xl px-4 py-2 flex items-center justify-center flex-nowrap text-sm`}
 							>
 								{tag}
 							</span>
@@ -90,17 +91,34 @@ const ProjectPage = ({ params }: { params: { id: string } }) => {
 					</div>
 				</div>
 			</div>
-			<div className="flex items-center justify-center mx-auto rounded-3xl overflow-clip w-full h-full">
-				<VideoPreview preview={project.preview} />
-			</div>
-			<div className="flex items-center justify-center mx-auto rounded-3xl overflow-clip w-full h-full">
-				<ImagesList images={project.images} />
-			</div>
-			<div className="flex flex-wrap gap-8 w-full items-start justify-between sm:justify-evenly overflow-clip">
-				{Object.entries(project.techs).map((category) => (
+
+			{project.preview && (
+				<div className="flex items-center justify-center rounded-3xl overflow-clip w-full h-full">
+					<VideoPreview preview={project.preview} />
+				</div>
+			)}
+
+			{project.images && (
+				<div className="flex items-center justify-center rounded-3xl overflow-clip w-full h-full">
+					<ImagesList images={project.images} />
+				</div>
+			)}
+
+			<div className="gap-2 w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 auto-cols-min overflow-hidden justify-items-stretch">
+				{Object.entries(project.techs).map((category, index, array) => (
 					<div
 						key={category[0]}
-						className={`flex flex-col items-center justify-start w-full sm:w-60 md:w-48 gap-2 rounded-3xl p-2`}
+						className={`flex flex-col items-center justify-start w-full gap-2 rounded-3xl p-2 ${
+							array.length == 4
+								? "sm:col-span-1 md:col-span-2 lg:col-span-1"
+								: array.length == 3
+								? `sm:col-span-2 ${
+										index == 1 ? "sm:row-span-2" : ""
+								  }`
+								: array.length == 2
+								? "sm:col-span-2"
+								: ""
+						} `}
 					>
 						<Title variant="small">
 							{category[0]
@@ -112,7 +130,7 @@ const ProjectPage = ({ params }: { params: { id: string } }) => {
 							{category[1].map((tech) => (
 								<span
 									key={tech}
-									className="bg-secondary text-secondary-foreground rounded-3xl px-4 py-2 flex items-center justify-center flex-nowrap text-sm"
+									className="bg-secondary text-secondary-foreground rounded-3xl px-4 py-2 flex items-center justify-center flex-nowrap text-sm text-nowrap"
 								>
 									{tech}
 								</span>
@@ -121,7 +139,8 @@ const ProjectPage = ({ params }: { params: { id: string } }) => {
 					</div>
 				))}
 			</div>
-			<div className="flex flex-wrap gap-[0.1rem] overflow-clip">
+
+			<div className="flex flex-wrap gap-[0.1rem] overflow-clip border bg-primary text-secondary-foreground rounded-full w-full h-auto">
 				{project.links && (
 					<div className="flex gap-2">
 						<Link

@@ -7,11 +7,11 @@ import Title from "@/components/ui/Title";
 
 const Projects = () => {
 	return (
-		<ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 h-auto w-full overflow-clip">
+		<ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 h-auto w-full overflow-clip">
 			{projectsData.map((project) => (
 				<li
 					key={project.id}
-					className="h-auto w-full bg-secondary text-secondary-foreground rounded-3xl border border-secondary p-4 flex flex-col flex-wrap items-start justify-evenly gap-8 md:justify-start"
+					className={`h-auto w-full ${project.colors} rounded-3xl border border-secondary p-4 flex flex-col flex-wrap items-start justify-evenly gap-8 md:justify-start`}
 				>
 					<Link href={`/project/${project.id}`}>
 						<Title>{project.title}</Title>
@@ -20,7 +20,7 @@ const Projects = () => {
 						{project.tags.map((tag) => (
 							<span
 								key={tag}
-								className="bg-secondary text-secondary-foreground rounded-3xl px-4 py-2 flex items-center justify-center flex-nowrap text-sm"
+								className={`${project.tagsColors} rounded-3xl px-4 py-2 flex items-center justify-center flex-nowrap text-sm`}
 							>
 								{tag}
 							</span>
