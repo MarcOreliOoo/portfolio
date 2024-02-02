@@ -39,7 +39,7 @@ const Categories = () => {
 			{themes.map((theme, index) => (
 				<div
 					key={index}
-					className={`h-auto w-full rounded-3xl p-4 border flex flex-col items-start justify-evenly gap-8 relative md:justify-start ${theme.className}`}
+					className={`h-auto w-full rounded-3xl p-4 border flex flex-col items-start justify-between gap-8 relative md:justify-start lg:justify-between ${theme.className}`}
 				>
 					<Icon
 						name={theme.icon}
