@@ -64,7 +64,8 @@ const projectsData: projectType[] = [
 		],
 		shortDesc:
 			"Demyth is a strategy-based web3 browser game, inspired by mythology, where players compete to ascend the rankings. In addition to the game, this project aims to integrate a variety of common full-stack tools, as we will discuss further.",
-		preview: "",
+		preview: "FlashbackDemyth",
+		images: ["Demyth_1.PNG", "Demyth_2.PNG"],
 		links: {
 			website: "https://demyth-frontend.vercel.app/",
 			github: "https://github.com/MarcOreliOoo/demyth/tree/main",

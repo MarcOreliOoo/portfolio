@@ -28,7 +28,11 @@ const Projects = () => {
 					</div>
 					<div className="flex items-center justify-center mx-auto rounded-3xl overflow-clip">
 						<Image
-							src={"/developer.png"}
+							src={
+								project.images && project.images[0]
+									? "/" + project.images[0]
+									: "/developer.png"
+							}
 							alt={project.title}
 							width="500"
 							height="500"

@@ -46,18 +46,19 @@ const VideoPreview = ({ preview }: { preview: projectType["preview"] }) => {
 const ImagesList = ({ images }: { images: projectType["images"] }) => {
 	if (!images || images.length == 0) return null;
 	return (
-		<>
+		<div className="grid grid-flow-row sm:grid-flow-col gap-2">
 			{images.map((image, index) => (
 				<Image
+					src={"/" + image}
 					key={index}
-					src={image}
-					alt={image}
-					width="500"
-					height="500"
-					priority={true}
+					alt={`Image ${index}`}
+					priority={index === 0} // Only the first image has priority if needed
+					width={500} // Set a fixed width for all images
+					height={500} // Set a fixed height for all images
+					className="object-fill rounded-3xl w-full h-full"
 				/>
 			))}
-		</>
+		</div>
 	);
 };
 
