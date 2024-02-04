@@ -94,18 +94,18 @@ const ProjectPage = ({ params }: { params: { id: string } }) => {
 			</div>
 
 			{project.preview && (
-				<div className="flex items-center justify-center rounded-3xl overflow-clip w-full h-full">
+				<div className="flex items-center justify-center rounded-3xl overflow-clip w-full h-auto">
 					<VideoPreview preview={project.preview} />
 				</div>
 			)}
 
 			{project.images && (
-				<div className="flex items-center justify-center rounded-3xl overflow-clip w-full h-full">
+				<div className="flex items-center justify-center rounded-3xl overflow-clip w-full h-auto">
 					<ImagesList images={project.images} />
 				</div>
 			)}
 
-			<div className="gap-2 w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 auto-cols-min overflow-hidden justify-items-stretch">
+			<div className="gap-2 w-full h-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 auto-cols-min overflow-hidden justify-items-stretch">
 				{Object.entries(project.techs).map((category, index, array) => (
 					<div
 						key={category[0]}
