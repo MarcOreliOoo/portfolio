@@ -16,11 +16,13 @@ export default function Home() {
 	const ref = useRef<HTMLDivElement>(null);
 	useEffect(() => {
 		const currentRef = ref.current;
+
 		const handleResize = () => {
 			if (currentRef?.offsetHeight) setHeight(currentRef.offsetHeight);
 		};
-
 		handleResize();
+		console.log("useEffect > height end", height);
+
 		window.addEventListener("resize", handleResize);
 
 		return () => {

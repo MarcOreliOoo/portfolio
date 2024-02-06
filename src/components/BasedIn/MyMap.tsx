@@ -54,7 +54,7 @@ const MyMap = ({ height }: { height?: number }) => {
 	return (
 		<div
 			className={`h-[${
-				height ?? 346
+				height && height > 0 ? height : 346
 			}px] w-full bg-secondary text-secondary-foreground rounded-3xl border border-secondary p-4 flex flex-col items-start justify-evenly gap-8 md:justify-start`}
 		>
 			<h1 className="text-3xl leading-8 font-semibold">I{"'"}m there!</h1>

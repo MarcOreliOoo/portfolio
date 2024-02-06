@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 import Title from "@/components/ui/Title";
+import { ArrowLink } from "@/components/ui/ArrowLink";
 
 const Projects = () => {
 	return (
@@ -11,10 +12,16 @@ const Projects = () => {
 			{projectsData.map((project) => (
 				<li
 					key={project.id}
-					className={`h-auto w-full ${project.colors} rounded-3xl border border-secondary p-4 flex flex-col flex-wrap items-start justify-between gap-8 `}
+					className={`h-auto w-full ${project.colors} rounded-3xl border border-secondary p-4 pt-6 flex flex-col flex-wrap items-start justify-between gap-8 `}
 				>
-					<Link href={`/project/${project.id}`}>
+					<Link
+						href={`/project/${project.id}`}
+						className="flex flex-row items-center justify-between w-full overflow-clip"
+					>
 						<Title>{project.title}</Title>
+						<ArrowLink
+							className={`flex-shrink-0 ${project.tagsColors} hover:scale-110 hover:rotate-12 transition-transform duration-300 ease-in-out`}
+						/>
 					</Link>
 					<div className="flex flex-wrap gap-[0.1rem] overflow-clip items-start justify-center w-full">
 						{project.tags.map((tag) => (
