@@ -1,5 +1,5 @@
 "use client";
-import React, { useMemo } from "react";
+import React, { useEffect, useMemo } from "react";
 import { MapContainer, TileLayer, Marker } from "react-leaflet";
 
 import "leaflet/dist/leaflet.css";
@@ -10,14 +10,17 @@ import L from "leaflet";
 
 const MapPlaceholder = () => {
 	return (
-		<p>
-			Map of London.{" "}
+		<p className="flex flex-wrap">
+			Map of Paris.{" "}
 			<noscript>You need to enable JavaScript to see this map.</noscript>
 		</p>
 	);
 };
 
 const MyMap = ({ height }: { height?: number }) => {
+	const finalHeight =
+		height && height > 0 ? `min-h-[${height}px]` : `min-h-[346px]`;
+
 	const displayMap = useMemo(() => {
 		const position = { lat: 48.83576965332031, lng: 2.241274356842041 };
 		const customIcon = new L.Icon({
@@ -27,6 +30,7 @@ const MyMap = ({ height }: { height?: number }) => {
 			popupAnchor: [0, -25], // Point from which the popup should open relative to the iconAnchor
 			className: "leaflet-div-icon rounded-full",
 		});
+
 		return (
 			<MapContainer
 				center={position}
@@ -53,9 +57,7 @@ const MyMap = ({ height }: { height?: number }) => {
 
 	return (
 		<div
-			className={`h-[${
-				height && height > 0 ? height : 346
-			}px] w-full bg-secondary text-secondary-foreground rounded-3xl border border-secondary p-4 flex flex-col items-start justify-evenly gap-8 md:justify-start`}
+			className={`${finalHeight} h-full w-full bg-secondary text-secondary-foreground rounded-3xl border border-secondary p-4 flex flex-col items-start justify-evenly gap-8 md:justify-start`}
 		>
 			<h1 className="text-3xl leading-8 font-semibold">I{"'"}m there!</h1>
 			{displayMap ?? null}

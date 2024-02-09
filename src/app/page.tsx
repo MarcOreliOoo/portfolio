@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, useLayoutEffect } from "react";
 import Hero from "@/components/Hero/Hero";
 import CTA from "@/components/CTA";
 import About from "@/components/About";
@@ -12,16 +12,18 @@ import Footer from "@/components/Footer/Footer";
 import Filler from "@/components/Filler";
 
 export default function Home() {
-	const [height, setHeight] = useState(0);
+	const [height, setHeight] = useState<number>();
+
 	const ref = useRef<HTMLDivElement>(null);
-	useEffect(() => {
+
+	useLayoutEffect(() => {
 		const currentRef = ref.current;
 
 		const handleResize = () => {
 			if (currentRef?.offsetHeight) setHeight(currentRef.offsetHeight);
 		};
+
 		handleResize();
-		console.log("useEffect > height end", height);
 
 		window.addEventListener("resize", handleResize);
 
@@ -29,6 +31,7 @@ export default function Home() {
 			window.removeEventListener("resize", handleResize);
 		};
 	}, []);
+
 	return (
 		<main className="w-full h-full grid grid-cols-1 gap-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
 			<div className="gap-2 w-full grid grid-cols-1 sm:grid-cols-2 sm:col-span-2 md:col-span-3 lg:col-span-3">
@@ -41,9 +44,11 @@ export default function Home() {
 			<div ref={ref} className="col-span-1 sm:col-span-2 md:col-span-3">
 				<About />
 			</div>
+
 			<div className="hidden lg:block lg:col-span-1">
 				<BasedIn height={height} />
 			</div>
+
 			<div className="flex flex-col gap-2 sm:grid sm:grid-cols-2 sm:col-span-2 md:col-span-3 lg:grid-cols-4 lg:col-span-4">
 				<Categories />
 			</div>

@@ -12,4 +12,3 @@ const BasedIn = (props: any) => {
 };
 
 export default BasedIn;
-/* export default BasedInDynamic; */
