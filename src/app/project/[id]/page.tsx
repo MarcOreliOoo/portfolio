@@ -8,6 +8,13 @@ import { Github, ExternalLink } from "lucide-react";
 import { Suspense } from "react";
 import { list } from "@vercel/blob";
 
+import Video from "next-video";
+import getStarted from "/videos/get-started.mp4";
+
+const VideoTest = () => {
+	return <Video src={getStarted} />;
+};
+
 const VideoSkeleton = () => (
 	<div className="w-full h-72 bg-secondary rounded-3xl bg-gradient-to-r from-secondary to-accent" />
 );
@@ -95,7 +102,8 @@ const ProjectPage = ({ params }: { params: { id: string } }) => {
 
 			{project.preview && (
 				<div className="flex items-center justify-center rounded-3xl overflow-clip w-full h-auto">
-					<VideoPreview preview={project.preview} />
+					{/* <VideoPreview preview={project.preview} /> */}
+					<VideoTest />
 				</div>
 			)}
 
