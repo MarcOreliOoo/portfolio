@@ -9,11 +9,6 @@ import { Suspense } from "react";
 import { list } from "@vercel/blob";
 
 import Video from "next-video";
-import getStarted from "/videos/FlashbackModernWebApp.mp4";
-
-const VideoTest = () => {
-	return <Video src={getStarted} />;
-};
 
 const VideoSkeleton = () => (
 	<div className="w-full h-72 bg-secondary rounded-3xl bg-gradient-to-r from-secondary to-accent" />
