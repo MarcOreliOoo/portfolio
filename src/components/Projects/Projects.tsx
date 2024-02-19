@@ -33,7 +33,7 @@ const Projects = () => {
 							</span>
 						))}
 					</div>
-					<div className="flex items-center justify-center mx-auto rounded-3xl overflow-clip">
+					<div className="relative rounded-3xl overflow-clip">
 						<Image
 							src={
 								project.images && project.images[0]
@@ -41,10 +41,18 @@ const Projects = () => {
 									: "/developer.png"
 							}
 							alt={project.title}
-							width="500"
-							height="500"
+							width="467"
+							height="381"
 							priority={true}
+							className="aspect-[4/3] object-cover object-left-top"
 						/>
+						<div
+							className="absolute inset-0 bg-gradient-to-t from-black to-transparent"
+							style={{
+								maskImage:
+									"linear-gradient(to top, black, transparent)",
+							}}
+						></div>
 					</div>
 				</li>
 			))}

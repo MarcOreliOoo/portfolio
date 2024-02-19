@@ -64,7 +64,7 @@ const projectsData: projectType[] = [
 		],
 		shortDesc:
 			"Demyth is a strategy-based web3 browser game, inspired by mythology, where players compete to ascend the rankings. In addition to the game, this project aims to integrate a variety of common full-stack tools, as we will discuss further.",
-		preview: "FlashbackDemyth",
+		preview: "/videos/FlashbackDemyth.mp4",
 		images: ["Demyth_1.PNG", "Demyth_2.PNG"],
 		links: {
 			website: "https://demyth-frontend.vercel.app/",
@@ -122,7 +122,8 @@ const projectsData: projectType[] = [
 		],
 		shortDesc:
 			"The CommOwn Shared Wallet project consists in creating a smart contract wallet enabling several people to buy, manage, view and sell ERC-20 or ERC-721 tokens, by sharing the costs of acquisition and gas, as well as the profits.",
-		preview: "",
+		preview: "/videos/FlashbackCSW.mp4",
+		images: ["CSW_1.PNG", "CSW_2.PNG"],
 		links: {
 			website: "https://commown-shared-wallet.vercel.app/",
 			github: "https://github.com/commown-shared-wallet",
@@ -148,7 +149,8 @@ const projectsData: projectType[] = [
 		],
 		shortDesc:
 			"Modern Design Website is a project that aims to create a modern website design with a lot of smooth gradient and explore tailwindcss usage.",
-		preview: "FlashbackModernWebApp",
+		preview: "/videos/FlashbackModernWebApp.mp4",
+		images: ["Modern_1.PNG"],
 		links: {
 			website: "https://start-modern-web3-app.vercel.app/",
 			github: "https://github.com/MarcOreliOoo/Modern-Design-App",

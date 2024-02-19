@@ -9,7 +9,7 @@ import { Suspense } from "react";
 import { list } from "@vercel/blob";
 
 import Video from "next-video";
-import getStarted from "/videos/get-started.mp4";
+import getStarted from "/videos/FlashbackModernWebApp.mp4";
 
 const VideoTest = () => {
 	return <Video src={getStarted} />;
@@ -27,7 +27,7 @@ const VideoComponent = async ({ fileName }: { fileName: string }) => {
 	const { url } = blobs[0];
 
 	return (
-		<video
+		<Video
 			controls
 			preload="auto"
 			aria-label="Video player"
@@ -35,10 +35,8 @@ const VideoComponent = async ({ fileName }: { fileName: string }) => {
 			autoPlay
 			playsInline
 			loop
-		>
-			<source src={url} type="video/mp4" />
-			Your browser does not support the video tag.
-		</video>
+			src={url}
+		/>
 	);
 };
 
@@ -102,8 +100,8 @@ const ProjectPage = ({ params }: { params: { id: string } }) => {
 
 			{project.preview && (
 				<div className="flex items-center justify-center rounded-3xl overflow-clip w-full h-auto">
-					{/* <VideoPreview preview={project.preview} /> */}
-					<VideoTest />
+					<VideoPreview preview={project.preview} />
+					{/* <VideoTest /> */}
 				</div>
 			)}
 
